@@ -1,0 +1,14 @@
+{
+  "pages":[
+    "pages/topics/topics",
+    "pages/detail/detail"
+  ],
+  "window":{
+    "backgroundTextStyle":"black",
+    "backgroundColor":"#fff",
+    "navigationBarBackgroundColor":"#FFF",
+    "navigationBarTitleText":"查影讯-第九区",
+    "navigationBarTextStyle":"black",
+    "enablePullDownRefresh":"true"
+  }
+}
