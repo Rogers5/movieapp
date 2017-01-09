@@ -1,40 +1,20 @@
 <!--detail.wxml-->
 <view class="detail-main">
   <view class="detail-post">
-
-    <view class="detail-post-meta">
-      <view class="detail-post-avatar">
-        <image class="detail-post-avatar-img" mode="scaleToFill" src="{{movie.img_src}}"></image>
-      </view>
-      <view class="detail-post-info">
-        <view class="detail-post-author-name">{{movie.title}}</view>
-        <view class="detail-post-time">导演:{{movie.director}}</view>
-        <view class="detail-post-time">类型:{{movie.movie_genre}}</view>
-        <view class="detail-post-time">片长:{{movie.duration}}</view>
-        <view class="detail-post-time">主演:{{movie.actors}}</view>
-      </view>
-    </view>
-
-
-    <view class="detail-post-content">
-      <text class="content-info">
-         {{movie.movie_intro}}
-      </text>
-    </view>
     <view class="detail-post-comment">
       <view class="detail-post-comment-title">影院列表</view>
       <view class="detail-post-comment-list">
         <block wx:for="{{detail}}">
-          <view class="detail-post-comment-item" index="{{index}}" id="{{item.id}}">
-            <view  class="detail-post-comment-author-name">{{item.cinema_name}}</view>
-            <view class="detail-post-comment-author-name">{{item.cinema_addr}}</view>
-            <view  class="detail-post-comment-author-name">展开比价({{item.app_price}}元起)</view>
-          </view>
+            <view class="detail-post-comment-item" index="{{index}}" id="{{item.id}}">
+              <view class="detail-post-avatar">
+                <image class="detail-post-avatar-img" mode="scaleToFill" src="{{movie.img_src}}"></image>
+                <view class="detail-post-comment-author-name">{{item.cinema_name}}</view>
+              </view>
+            </view>
         </block>      
       </view>
     </view>
   </view>
-
   <loading hidden="{{hidden}}">
     加载中...
   </loading>
