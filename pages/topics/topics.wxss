@@ -99,3 +99,60 @@
   width:65%;
   float:left;
 }
+/* 基础样式 */
+view,scroll-view,swiper,swiper-item,icon,text,progress,button,checkbox-group,checkbox,form,input,label,picker,radio-group,radio,slider,switch,action-sheet,action-sheet-item,action-sheet-cancel,modal,toast,loading,navigator,audio,image,video,map,canvas {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+}
+page {
+        height: 100%;
+        font-family: -apple-system-font,Helvetica Neue,Helvetica,sans-serif;
+}
+checkbox-group,
+radio-group{
+        display:block;
+}
+:before,
+:after ,
+::before,
+::after{
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+}
+.c-minheight {
+        min-height: 80px;
+}
+.c-full {
+        width: 100%;
+        height: 100%;
+}
+.c-block {
+        display: block;
+}
+.c-autosize {
+        width: auto;
+        height: auto;
+}
+.c-fullwidth {
+        width: 100%;
+}
+.c-fullheight {
+        height: 100%;
+}
+.c-initHide{
+        opacity:0 !important;
+}
+.c-ellipse{
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            overflow:hidden;
+}
+/* 自定义样式 */
+.wx-view_ykjmmZ{width:  100%; display:  flex; height:  20px; min-height: 0px; }
+.wx-text_Drtn4V{height: 20px; }
+.wx-image_ciIt13{width:  20px; display:  flex; flex-direction:  row; justify-content:  center; align-items:  center; height: 20px; flex:  0 0 auto; align-self:  stretch; order:  0; }
+.wx-image_GIvmeR{width: 20px; height:  20px; display:  flex; flex:  0 1 auto; align-self:  stretch; order:  0; justify-content:  center; align-items:  baseline; padding-right:  0px; overflow:  hidden; position:  static; border-style:  none; border-radius:  0px; }

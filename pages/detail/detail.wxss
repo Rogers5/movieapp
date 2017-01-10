@@ -40,13 +40,18 @@
   overflow: hidden;
 }
 .detail-post-author-name, .detail-post-comment-author-name {
-  width: 60%;
+  width: 48%;
   float:left;
   color: #6c6c6c;
   font-size: 15px;
   height: 100px;
   line-height: 100px;
   margin: 3px 0 0 5px;
+}
+.svgstyle{
+  width: 44px;
+  height: 44px;
+  fill: #3190e8;
 }
 .detail-post-time, .detail-post-comment-time {
   line-height: 20px;
