@@ -1,6 +1,7 @@
 .detail-post {
   background-color: #eee;
 }
+
 .detail-post-header {
   background-color: #fff;
   line-height: 40px;
@@ -9,6 +10,7 @@
   overflow: hidden;
   border-bottom: 1px #ccc solid;
 }
+
 .detail-post-title {
   margin: 0;
   padding: 0;
@@ -16,22 +18,26 @@
   font-size: 29px;
   color: #80bd01;
 }
+
 .detail-post-meta {
   position: relative;
   padding: 13px 18px 0 18px;
   background: #fff;
 }
+
 .detail-post-avatar, .detail-post-comment-avatar {
   width: 100%;
   height: 100px;
   display: block;
   margin-top: 3px;
 }
+
 .detail-post-avatar-img, .detail-post-comment-avatar-img {
   width: 30%;
   height: 100px;
   float: left;
 }
+
 .detail-post-info, .detail-post-comment-info, .detail-comment-content {
   margin: 0 0 0 50px;
   padding: 0 0 0 5px;
@@ -39,40 +45,47 @@
   line-height: 20px;
   overflow: hidden;
 }
+
 .detail-post-author-name, .detail-post-comment-author-name {
   width: 48%;
-  float:left;
+  float: left;
   color: #6c6c6c;
   font-size: 15px;
   height: 100px;
   line-height: 100px;
   margin: 3px 0 0 5px;
 }
-.svgstyle{
+
+.svgstyle {
   width: 44px;
   height: 44px;
   fill: #3190e8;
 }
+
 .detail-post-time, .detail-post-comment-time {
   line-height: 20px;
   font-size: 12px;
   color: #a4a4a4;
 }
+
 .detail-post-content {
   background-color: #fff;
   padding: 13px 18px 25px 18px;
-  font-family: Helvetica Neue,Helvetica,Hiragino Sans GB,Microsoft YaHei,Arial,sans-serif;
+  font-family: Helvetica Neue, Helvetica, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
   margin-bottom: 13px;
 }
+
 .content-info {
   font-size: 12px;
   line-height: 20px;
   word-wrap: break-word;
   padding: 0;
 }
+
 .detail-post-comment {
   background-color: #fff;
 }
+
 .detail-post-comment-title {
   font-size: 20px;
   line-height: 50px;
@@ -81,12 +94,55 @@
   position: relative;
   border-bottom: 1px #ccc solid;
 }
+
 .detail-post-comment-item {
   padding: 5px 10px;
   background: #fff;
   border-bottom: 1px #ccc solid;
 }
+
 .detail-comment-text {
   margin: 10px 0;
   font-size: 15px;
+}
+
+/* 自定义样式 */
+
+.wx-view_ykjmmZ {
+  width: 20%;
+  display: flex;
+  height: 20px;
+  align-items: center;
+}
+
+.wx-text_Drtn4V {
+  height: 20px;
+  display: flex;
+}
+
+.wx-image_ciIt13 {
+  width: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 20px;
+  order: 0;
+  flex: 1 1 0%;
+  flex-grow: 0;
+  flex-shrink: 0;
+  flex-basis: auto;
+}
+
+.wx-image_GIvmeR {
+  width: 20px;
+  height: 20px;
+  display: flex;
+  flex: 0 1 auto;
+  order: 0;
+  align-items: baseline;
+  padding-right: 0px;
+  overflow: hidden;
+  position: static;
+  border-style: none;
+  border-radius: 0px;
 }
