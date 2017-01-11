@@ -7,7 +7,7 @@
     "backgroundTextStyle":"black",
     "backgroundColor":"#fff",
     "navigationBarBackgroundColor":"#FFF",
-    "navigationBarTitleText":"查影讯-第九区",
+    "navigationBarTitleText":"查影讯",
     "navigationBarTextStyle":"black",
     "enablePullDownRefresh":"true"
   }
