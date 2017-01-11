@@ -1,8 +1,15 @@
 <!--posts.wxml-->
 <view class="topics-main">
   <view class="top-bar">
-    <view class="top-bar-item" id="all" catchtap="onTapTag">热映{{count_nowplaying}}</view>
-    <view class="top-bar-item" id="good" catchtap="onTapTag" >预售{{count_upcoming}}</view>
+    <view class="top-bar-item" id="all" catchtap="onTapTag">
+      <view class="tab">热菜</view>
+    </view>
+    <view class="top-bar-item" id="good" catchtap="onTapTag" >
+      <view >冷菜</view>
+    </view>
+    <view class="top-bar-item" id="good" catchtap="onTapTag" >
+      <view >饮料</view>
+    </view>
   </view>
   <scroll-view class="posts-list" style="height:100%" scroll-y="true" bindscrolltolower="lower">
     <block wx:for="{{postsList}}">
@@ -14,21 +21,13 @@
             <view class="posts-last-reply">{{item.score}}分</view>
           </view>
           <view class="movie-detail">
-            <view class="author-name" style="width:100%;">类型:{{item.movie_genre}}</view>
-            <view class="author-name" style="width:100%;">片长:{{item.duration}}分钟</view>
+            <view class="author-name" style="width:100%;">主材:{{item.movie_genre}}</view>
+            <view class="author-name" style="width:100%;">辅料:{{item.duration}}分钟</view>
           </view>
           <view class="movie-detail">
             <view class="author-name" catchtap="showDetail" id="{{item.id}}">点击详情</view>
-            <view class="posts-last-reply" catchtap="redictDetail" id="{{item.title}}">比价</view>
+            <view class="posts-last-reply" catchtap="redictDetail" id="{{item.title}}">加入菜单</view>
           </view>
-          <view class="movie-detail">
-            <view class="author-name" >最终以各APP实时价格为准</view>
-          </view>
-         <view class="posts-title show{{item.id}}" style="display:none;" >
-            <view class="author-name" style="width:100%;">导演:{{item.director}}</view>
-            <view class="author-name" style="width:100%;">主演:{{item.actors}}</view>
-            <view class="author-name" style="width:100%;">剧情简介:{{item.movie_intro}}</view>
-        </view>
         </view>
       </view>
     </block>
