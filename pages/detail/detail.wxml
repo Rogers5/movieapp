@@ -10,9 +10,13 @@
                 <image class="detail-post-avatar-img" mode="scaleToFill" src="{{movie.img_src}}"></image>
                 <view class="detail-post-comment-author-name">{{item.cinema_name}}</view>
                 <view class="c-minheight wx-view_ykjmmZ" data-c_e_id="wx_view_9c378fd9">
-                <image class="wx-image_ciIt13" data-c_e_id="wx_image_fbeb5385" mode="aspectFill" src="http://qty83k.creatby.com/materials/origin/007ed547dad67325f681ac9678419e1b_origin_llUYeH9.png" style="background-size: cover; background-position: center center; background-repeat: no-repeat; background-image:     url(http://qty83k.creatby.com/materials/origin/007ed547dad67325f681ac9678419e1b_origin_llUYeH9.png); "/>
+                <a class="quantity-decrease disabled" id="subnum1811009" href="javascript:subWareBybutton('8888','195676212','1',13,1811009,1);" onclick="checkLimitNum();">
+                <image class="wx-image_ciIt13" />
+                </a>
                 <text class="c-block wx-text_Drtn4V" data-c_e_id="wx_text_30ea4c34">12</text>
-                <image class="wx-image_GIvmeR" data-c_e_id="wx_image_025766e9" mode="scaleToFill" src="http://qty83k.creatby.com/materials/origin/007ed547dad67325f681ac9678419e1b_origin_llUYeH9.png" style="background-size: 100% 100%; background-position: 0% 0%; background-repeat: no-repeat; background-image:         url(http://qty83k.creatby.com/materials/origin/007ed547dad67325f681ac9678419e1b_origin_llUYeH9.png); "/>
+                <a class="quantity-increase" id="subnum1811009" href="javascript:subWareBybutton('8888','195676212','1',13,1811009,1);" onclick="checkLimitNum();">
+                <image class="wx-image_ciIt13" />
+                </a>
             </view>
               </view>
             </view>

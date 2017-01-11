@@ -146,3 +146,15 @@
   border-style: none;
   border-radius: 0px;
 }
+.quantity-decrease{
+    background: url(http://xs01.meituan.net/waimai_i/img/sprite/icon.562e2a26.png) no-repeat -15px -28px;
+    background-size: 150px 350px;
+    width:25px;
+    height:25px;
+}
+.quantity-increase {
+    background: url(http://xs01.meituan.net/waimai_i/img/sprite/icon.562e2a26.png) no-repeat -15px 0px;
+    background-size: 150px 350px;
+    width:25px;
+    height:25px;
+}
