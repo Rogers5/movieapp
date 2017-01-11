@@ -8,26 +8,24 @@
   position: fixed;
   top:0;
   z-index:1;
-  border-top: 1px solid #80bd01;
 }
 .top-bar-item {
   display:inline-block;
-  width: 50%;
-  color: #80bd01;
-  text-align: center;
-  line-height: 36px;
-  font-size: 14px;
+  width:33%;
+  color:#888;
+  text-align:center;
+  line-height:17pt;
+  font-size:11pt;
 }
 .posts-list {
   margin-top: 36px;
 }
 .posts-item {
-  position: relative;
-  padding: 10px 0 10px 10px;
-  font-size: 14px;
-  padding-right: 10px;
-  background: #fff;
-  border-bottom: 1px solid #80bd01;
+  position:relative;
+  padding:8px 0 0 8px;
+  font-size:14px;
+  padding-right:10px;
+  background:#fff;
 }
 .author {
   overflow: hidden;
@@ -40,11 +38,12 @@
   float: left;
 }
 .author-name {
-  color: #666;
-  float: left;
+  color:#888;
+  float:left;
   margin-left:5px;
-  font-size: 12px;
-  margin-bottom: 10px;
+  font-size:12px;
+  margin-bottom:11px;
+  line-height:19px;
 }
 .posts-tag {
   background: #fff;
