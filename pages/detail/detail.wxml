@@ -1,3 +1,4 @@
+
 <!--detail.wxml-->
 <view class="detail-main">
   <view class="detail-post">
@@ -5,22 +6,22 @@
       <view class="detail-post-comment-title">影院列表</view>
       <view class="detail-post-comment-list">
         <block wx:for="{{detail}}">
-            <view class="detail-post-comment-item" index="{{index}}" id="{{item.id}}">
-              <view class="detail-post-avatar">
-                <image class="detail-post-avatar-img" mode="scaleToFill" src="{{movie.img_src}}"></image>
-                <view class="detail-post-comment-author-name">{{item.cinema_name}}</view>
-                <view class="c-minheight wx-view_ykjmmZ" data-c_e_id="wx_view_9c378fd9">
-                <a class="quantity-decrease disabled" id="subnum1811009" href="javascript:subWareBybutton('8888','195676212','1',13,1811009,1);" onclick="checkLimitNum();">
-                <image class="wx-image_ciIt13" />
-                </a>
-                <text class="c-block wx-text_Drtn4V" data-c_e_id="wx_text_30ea4c34">12</text>
-                <a class="quantity-increase" id="subnum1811009" href="javascript:subWareBybutton('8888','195676212','1',13,1811009,1);" onclick="checkLimitNum();">
-                <image class="wx-image_ciIt13" />
-                </a>
-            </view>
+          <view class="detail-post-comment-item" index="{{index}}" id="{{item.id}}">
+            <view class="detail-post-avatar">
+              <image class="detail-post-avatar-img" mode="scaleToFill" src="{{movie.img_src}}"></image>
+              <view class="detail-post-comment-author-name">{{item.cinema_name}}</view>
+              <view class="c-minheight wx-view_ykjmmZ" data-c_e_id="wx_view_9c378fd9">
+                <a class="{{display}}" id="subnum1811009" bindtap="decreaseNum">
+                  <image class="wx-image_ciIt13" />
+                </a> 
+                <text class="c-block wx-text_Drtn4V" data-c_e_id="wx_text_30ea4c34">{{counts}}</text>
+                <a class="quantity-increase" id="subnum1811009" bindtap="increaseNum">
+                  <image class="wx-image_ciIt13" />
+                </a> 
               </view>
             </view>
-        </block>      
+          </view>
+        </block>
       </view>
     </view>
   </view>
