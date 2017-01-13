@@ -8,6 +8,9 @@ Page({
     hidden: false,
     count_nowplaying:{},
     count_upcoming:{},
+    disabled: false,
+    showorder: '加入菜单',
+    showtype:'0',
     page: 1,
     tab: 'all'
   },
@@ -47,9 +50,8 @@ Page({
     wx.request({
       url: Api.getTopics(data),
       success: function (res) {
+        console.log(res.data.data);
         self.setData({
-          count_nowplaying:res.data.count_nowplaying,
-          count_upcoming:res.data.count_upcoming,
           postsList: res.data.data
         });
         setTimeout(function () {
@@ -61,20 +63,26 @@ Page({
     });
   },
   redictDetail: function (e) {
-    var id = e.currentTarget.id,
-        url = '../detail/detail?id=' + id;
-    wx.navigateTo({
-      url: url
+    //加入菜单 jin 2017-01-13 str
+    var id = e.currentTarget.id;
+     console.log(e);
+     
+    this.setData({
+        showtype: id
+    });
+    wx.request({
+      url: Api.addMenu(id),
+      success: function (res) {
+        //console.log(res);
+      }
     })
+    //2017-01-13 jin 2017-01-13 end
   },
   showDetail: function (e) {
     var id = "show"+e.currentTarget.id;
-    alert(id);
     this.setData({
         id: "none"
     });
-    console.log("ID:"+id);
-
   },
   lower: function (e) {
     var self = this;

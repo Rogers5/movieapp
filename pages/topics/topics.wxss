@@ -42,7 +42,7 @@
   float:left;
   margin-left:5px;
   font-size:12px;
-  margin-bottom:11px;
+  margin-bottom:6px;
   line-height:19px;
 }
 .posts-tag {
@@ -155,3 +155,13 @@ radio-group{
 .wx-text_Drtn4V{height: 20px; }
 .wx-image_ciIt13{width:  20px; display:  flex; flex-direction:  row; justify-content:  center; align-items:  center; height: 20px; flex:  0 0 auto; align-self:  stretch; order:  0; }
 .wx-image_GIvmeR{width: 20px; height:  20px; display:  flex; flex:  0 1 auto; align-self:  stretch; order:  0; justify-content:  center; align-items:  baseline; padding-right:  0px; overflow:  hidden; position:  static; border-style:  none; border-radius:  0px; }
+
+.tab{
+  border-bottom:2px solid #2c3e50;
+  margin:0 auto;
+  width:30px;
+}
+.showtype{
+  background:#e25242;
+  color:#fff;
+}
