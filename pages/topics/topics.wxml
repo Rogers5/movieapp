@@ -13,20 +13,19 @@
   </view>
   <scroll-view class="posts-list" style="height:100%" scroll-y="true" bindscrolltolower="lower">
     <block wx:for="{{postsList}}">
-      <view class="posts-item" index="{{index}}" >
+      <view class="posts-item" >
         <view class="author">
-          <image class="author-avatar" src="{{item.img_src}}"></image>
+          <image class="author-avatar" src="{{item.	food_images}}"></image>
           <view class="movie-detail">
-            <view class="author-name">{{item.title}}</view>
-            <view class="posts-last-reply">{{item.score}}分</view>
+            <view class="author-name">{{item.food_name}}</view>
+            <view class="posts-last-reply">¥ {{item.food_price}}</view>
           </view>
           <view class="movie-detail">
-            <view class="author-name" style="width:100%;">主材:{{item.movie_genre}}</view>
-            <view class="author-name" style="width:100%;">辅料:{{item.duration}}分钟</view>
+            <view class="author-name" style="width:100%;">主材: {{item.food_principal}}</view>
+            <view class="author-name" style="width:100%;">评价: {{item.food_judge}}分钟</view>
           </view>
           <view class="movie-detail">
-            <view class="author-name" catchtap="showDetail" id="{{item.id}}">点击详情</view>
-            <view class="posts-last-reply" catchtap="redictDetail" id="{{item.title}}">加入菜单</view>
+            <button class="posts-last-reply" type="{{showtype==item.id ? 'primary' : 'default'}}" size="mini"  bindtap="redictDetail" id="{{item.id}}"> {{showorder}}</button>       
           </view>
         </view>
       </view>
