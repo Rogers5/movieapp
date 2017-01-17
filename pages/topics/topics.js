@@ -62,28 +62,37 @@ Page({
       }
     });
   },
-  redictDetail: function (e) {
+  redictAdd: function (e) {
+    //加入菜单 jin 2017-01-13 str
+    console.log(e);
+    var id = e.currentTarget.id;
+    var key =  e.target.dataset.id;
+    var idx = `postsList[${key}].selected`;
+    wx.request({
+      url: Api.addMenu(id,'add'),
+      success: function (res) {
+        console.log(res);
+      }
+    })
+    this.setData({ [idx] : true });
+    //2017-01-13 jin 2017-01-13 end
+  },
+  
+  redictCancel: function (e) {
     //加入菜单 jin 2017-01-13 str
     var id = e.currentTarget.id;
-     console.log(e);
-     
-    this.setData({
-        showtype: id
-    });
+    var key =  e.target.dataset.id;
+    var idx = `postsList[${key}].selected`;
+    this.setData({ [idx] : false });
     wx.request({
-      url: Api.addMenu(id),
+      url: Api.addMenu(id,'cancel'),
       success: function (res) {
-        //console.log(res);
+        console.log(res);
       }
     })
     //2017-01-13 jin 2017-01-13 end
   },
-  showDetail: function (e) {
-    var id = "show"+e.currentTarget.id;
-    this.setData({
-        id: "none"
-    });
-  },
+
   lower: function (e) {
     var self = this;
     self.setData({
