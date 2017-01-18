@@ -11,8 +11,9 @@
       <view >饮料</view>
     </view>
   </view>
-  <scroll-view class="posts-list" style="height:100%" scroll-y="true" bindscrolltolower="lower">
-    <block wx:for="{{postsList}}">
+ <!-- <scroll-view class="posts-list" style="height:100%" scroll-y="true" bindscrolltolower="lower">-->
+    <scroll-view class="posts-list" style="height:100%" scroll-y="true" >
+    <block wx:for="{{postsList}}" wx:for-index="idx">
       <view class="posts-item" >
         <view class="author">
           <image class="author-avatar" src="{{item.	food_images}}"></image>
@@ -25,13 +26,16 @@
             <view class="author-name" style="width:100%;">评价: {{item.food_judge}}分钟</view>
           </view>
           <view class="movie-detail">
-            <button class="posts-last-reply" type="{{showtype==item.id ? 'primary' : 'default'}}" size="mini"  bindtap="redictDetail" id="{{item.id}}"> {{showorder}}</button>       
+            <button wx:if="{{item.selected}}"  class="posts-last-reply"  type="default" size="mini"  bindtap="redictCancel" id="{{item.id}}" data-id="{{idx}}"> 已经加入</button>
+            <button wx:if="{{!item.selected}}" class="posts-last-reply"  type="primary" size="mini"  bindtap="redictAdd" id="{{item.id}}"  data-id="{{idx}}">{{showorder}}</button>
           </view>
         </view>
       </view>
     </block>
   </scroll-view>
+  <!--
   <loading hidden="{{hidden}}">
     加载中...
   </loading>
+  -->
 </view>
