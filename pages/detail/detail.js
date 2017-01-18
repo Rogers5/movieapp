@@ -1,15 +1,14 @@
 // posts.js
-var Api  = require('../../utils/api.js');
+var Api = require('../../utils/api.js');
 var util = require('../../utils/util.js');
 Page({
   data: {
-    title: '电影排片表',
+    title: '订单确认',
     detail: {},
-    movie:{},
-    film:{},
+    movie: {},
+    film: {},
     hidden: false,
-    counts:10,
-    display:"quantity-decrease"
+    modalHidden: true
   },
   onLoad: function (options) {
     this.fetchData(options.id);
@@ -21,12 +20,10 @@ Page({
     });
     wx.request({
       url: Api.getDetail(data),
-      success: function (res) {  
-        console.log(res.data);     
+      success: function (res) {
+        console.log(res.data.order_detail);
         self.setData({
-          detail: res.data.cinema_array,
-          movie : res.data.movie_array,
-          film  : res.data.filmslice_array
+          detail: res.data.order_detail
         });
         setTimeout(function () {
           self.setData({
@@ -37,34 +34,54 @@ Page({
     });
   },
   decreaseNum: function (e) {
-    if(this.data.counts !== 1){
+    //console.log(e)
+    var idx = e.currentTarget.dataset.idx
+    var count = `detail[${idx}].count`
+    console.log(this.data.detail)
+    if (this.data.detail[idx].count !== 1) {
       this.setData({
-          counts: this.data.counts - 1,
-          display:"quantity-decrease"
+        //counts: this.data.counts - 1,
+        //display: "quantity-decrease"
+        [count]:Number.parseInt(this.data.detail[idx].count) - 1
       });
-    }else{
+    }else {
       this.setData({
-          display:"decrease-none"
-      });
+        //[app_price]:this.data.detail[idx].app_price - 1
+        display: "decrease-none"
+      })
+      //this.setData({[idx] : true})
+        //modalHidden: false,
+        //counts: this.data.counts - 1,
+        //display: "decrease-none"
+      //}
+      //);
     }
-    
-    //console.log("ID:"+id);
-
   },
   increaseNum: function (e) {
-    //var id = "show"+e.currentTarget.id;
-    if(this.data.counts == 1){
+    if (this.data.counts == 0) {
       this.setData({
-          counts: this.data.counts + 1,
-          display:"quantity-decrease"
-        });
-    }else{
-        this.setData({
-          counts: this.data.counts + 1
-        });
+        counts: this.data.counts + 1,
+        display: "quantity-decrease"
+      });
+    } else {
+      this.setData({
+        counts: this.data.counts + 1
+      });
     }
-    
-    //console.log("ID:"+id);
-
+  },
+  modalConfirm: function (e) {
+    //var minus = e.target.dataset.minus
+    var minus = 0 
+    var idx = `detail[${minus}].selected`
+    //console.log(e)
+    this.setData({ 
+      [idx] : true,
+      modalHidden: true 
+    })
+  },
+  modalCancel: function (e) {
+    this.setData({
+      modalHidden: true
+    })
   }
 })
