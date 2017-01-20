@@ -5,13 +5,13 @@
     <view class="detail-post-comment">
       <view class="detail-post-comment-title">{{title}}</view>
       <view class="detail-post-comment-list">
-        <block wx:for="{{detail}}" >
+        <block wx:for="{{detail}}" wx:for-index="index">
           <view class="detail-post-comment-item" hidden="{{!(item.count) ? true : false}}">
             <view class="detail-post-avatar">
               <image class="detail-post-avatar-img" mode="scaleToFill" src="{{item.images}}"></image>
               <view class="detail-post-comment-author-name">{{item.name}}</view>
               <view class="c-minheight wx-view_ykjmmZ">
-                <a class="quantity-decrease" catchtap="decreaseNum" data-idx="{{index}}" >
+                <a class="quantity-decrease" catchtap="decreaseNum" data-idx="{{index}}" data-id="{{item.id}}">
                   <image class="wx-image_ciIt13" />
                 </a> 
                 <text class="c-block wx-text_Drtn4V">{{item.count}}</text>

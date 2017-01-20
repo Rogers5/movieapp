@@ -35,6 +35,7 @@ Page({
   },
   decreaseNum: function (e) {
     //console.log(e)
+    var id = e.currentTarget.dataset.id
     var idx = e.currentTarget.dataset.idx
     var count = `detail[${idx}].count`
     console.log(this.data.detail)
@@ -48,7 +49,13 @@ Page({
       this.setData({
         //[app_price]:this.data.detail[idx].app_price - 1
         display: "decrease-none"
-      })
+      });
+      wx.request({
+      url: Api.addMenu(id,'cancel'),
+      success: function (res) {
+        console.log(res);
+      }
+    })
       //this.setData({[idx] : true})
         //modalHidden: false,
         //counts: this.data.counts - 1,
@@ -58,16 +65,19 @@ Page({
     }
   },
   increaseNum: function (e) {
-    if (this.data.counts == 0) {
+    var idx = e.currentTarget.dataset.idx
+    var count = `detail[${idx}].count`
+    // if (this.data.counts == 0) {
+    //   this.setData({
+    //     counts: this.data.counts + 1,
+    //     display: "quantity-decrease"
+    //   });
+    // } else {
       this.setData({
-        counts: this.data.counts + 1,
-        display: "quantity-decrease"
+        //counts: this.data.counts + 1
+        [count]:Number.parseInt(this.data.detail[idx].count) + 1
       });
-    } else {
-      this.setData({
-        counts: this.data.counts + 1
-      });
-    }
+    // }
   },
   modalConfirm: function (e) {
     //var minus = e.target.dataset.minus
