@@ -18,7 +18,7 @@ Page({
     this.fetchData();
     console.log('下拉刷新', new Date());
   },
-  onLoad: function () {
+  onShow: function () {
     console.log(1)
     this.fetchData();
   },

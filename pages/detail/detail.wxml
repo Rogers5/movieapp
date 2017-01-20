@@ -5,7 +5,7 @@
     <view class="detail-post-comment">
       <view class="detail-post-comment-title">{{title}}</view>
       <view class="detail-post-comment-list">
-        <block wx:for="{{detail}}" wx:for-index="index">
+        <block wx:for="{{detail}}">
           <view class="detail-post-comment-item" hidden="{{!(item.count) ? true : false}}">
             <view class="detail-post-avatar">
               <image class="detail-post-avatar-img" mode="scaleToFill" src="{{item.images}}"></image>

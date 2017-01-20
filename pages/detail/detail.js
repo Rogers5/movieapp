@@ -10,8 +10,8 @@ Page({
     hidden: false,
     modalHidden: true
   },
-  onLoad: function (options) {
-    this.fetchData(options.id);
+  onShow: function () {
+    this.fetchData();
   },
   fetchData: function (data) {
     var self = this;
@@ -34,59 +34,41 @@ Page({
     });
   },
   decreaseNum: function (e) {
-    //console.log(e)
     var id = e.currentTarget.dataset.id
     var idx = e.currentTarget.dataset.idx
     var count = `detail[${idx}].count`
-    console.log(this.data.detail)
-    if (this.data.detail[idx].count !== 1) {
-      this.setData({
-        //counts: this.data.counts - 1,
-        //display: "quantity-decrease"
-        [count]:Number.parseInt(this.data.detail[idx].count) - 1
-      });
-    }else {
-      this.setData({
-        //[app_price]:this.data.detail[idx].app_price - 1
-        display: "decrease-none"
-      });
+    console.log(id)
+    
+    if (this.data.detail[idx].count == 1) {
       wx.request({
-      url: Api.addMenu(id,'cancel'),
-      success: function (res) {
-        console.log(res);
-      }
-    })
-      //this.setData({[idx] : true})
-        //modalHidden: false,
-        //counts: this.data.counts - 1,
-        //display: "decrease-none"
-      //}
-      //);
+        url: Api.addMenu(id, 'del'),
+        success: function (res) {
+          console.log(res);
+        }
+      });
+      this.setData({
+        [count]: false
+      });
+    } else {
+      this.setData({
+        [count]: Number.parseInt(this.data.detail[idx].count) - 1
+      });
+      
     }
   },
   increaseNum: function (e) {
     var idx = e.currentTarget.dataset.idx
     var count = `detail[${idx}].count`
-    // if (this.data.counts == 0) {
-    //   this.setData({
-    //     counts: this.data.counts + 1,
-    //     display: "quantity-decrease"
-    //   });
-    // } else {
-      this.setData({
-        //counts: this.data.counts + 1
-        [count]:Number.parseInt(this.data.detail[idx].count) + 1
-      });
-    // }
+    this.setData({
+      [count]: Number.parseInt(this.data.detail[idx].count) + 1
+    });
   },
   modalConfirm: function (e) {
-    //var minus = e.target.dataset.minus
-    var minus = 0 
+    var minus = 0
     var idx = `detail[${minus}].selected`
-    //console.log(e)
-    this.setData({ 
-      [idx] : true,
-      modalHidden: true 
+    this.setData({
+      [idx]: true,
+      modalHidden: true
     })
   },
   modalCancel: function (e) {
