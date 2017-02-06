@@ -11,22 +11,21 @@
               <image class="detail-post-avatar-img" mode="scaleToFill" src="{{item.images}}"></image>
               <view class="detail-post-comment-author-name">{{item.name}}</view>
               <view class="c-minheight wx-view_ykjmmZ">
-                <a class="quantity-decrease" catchtap="decreaseNum" data-idx="{{index}}" data-id="{{item.id}}">
+                <a class="quantity-decrease" catchtap="decreaseNum" data-idx="{{index}}" data-id="{{item.id}}" data-price="{{item.price}}">
                   <image class="wx-image_ciIt13" />
                 </a> 
                 <text class="c-block wx-text_Drtn4V">{{item.count}}</text>
-                <a class="quantity-increase" catchtap="increaseNum" data-idx="{{index}}">
+                <a class="quantity-increase" catchtap="increaseNum" data-idx="{{index}}" data-id="{{item.id}}" data-price="{{item.price}}">
                   <image class="wx-image_ciIt13" />
                 </a>
               </view>
             </view>
           </view>
         </block>
-        <view class="page__bd">
-          <modal title="提示信息" confirm-text="确认" cancel-text="取消" hidden="{{modalHidden}}" mask bindconfirm="modalConfirm" bindcancel="modalCancel">
-            您确认要删除吗？
-          </modal>
-        </view>
+      </view>
+      <view class="detail-post-comment-bottom">
+        <view class="detail-post-comment-total">订单总计：{{total}}</view>
+        <view class="detail-post-comment-submit">提 交</view>
       </view>
     </view>
   </view>

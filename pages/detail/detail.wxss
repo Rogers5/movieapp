@@ -166,3 +166,29 @@
 .increase-block{
   display: block
 }
+.detail-post-comment-bottom{
+  width: 100%;
+  height:50px;
+  position: fixed;
+  bottom: 0px;
+}
+.detail-post-comment-total{
+  background-color: red;
+  width: 70%;
+  height:50px;
+  position: fixed;
+  left:0px;
+  color:white;
+  text-align:center;
+  line-height:50px;
+}
+.detail-post-comment-submit{
+  background-color: blue;
+  height:50px;
+  width: 30%;
+  position: fixed;
+  right:0px;
+  color:white;
+  text-align:center;
+  line-height:50px;
+}
