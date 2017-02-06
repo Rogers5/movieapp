@@ -19,7 +19,7 @@
           <image class="author-avatar" src="{{item.	food_images}}"></image>
           <view class="movie-detail">
             <view class="author-name">{{item.food_name}}</view>
-            <view class="posts-last-reply">¥ {{item.food_price}}</view>
+            <view class="posts-last-reply" style="font-size:15px;color:#fd6920;">¥ {{item.food_price}}</view>
           </view>
           <view class="movie-detail">
             <view class="author-name" style="width:100%;">主材: {{item.food_principal}}</view>
